@@ -18,5 +18,5 @@ python train.py \
 --id celeba128_unet_bce_noatt_cutmix_consist --gpus "0,1"  \
 --unconditional --warmup_epochs 20 \
 --unet_mixup --consistency_loss_and_augmentation \
---base_root path/to/folder_for_results \
---data_folder /path/to/img_align_celeba_png
+--base_root /home/kevin/Projects/unetgan/results \
+--data_folder /home/kevin/Projects/CelebA/Img/img_align_celeba_png

@@ -9,8 +9,8 @@ def random_boundingbox(size, lam):
     width , height = size, size
 
     r = np.sqrt(1. - lam)
-    w = np.int(width * r)
-    h = np.int(height * r)
+    w = int(width * r)
+    h = int(height * r)
     x = np.random.randint(width)
     y = np.random.randint(height)
 

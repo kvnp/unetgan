@@ -44,7 +44,7 @@ import torch
 from torchvision import models
 from scipy import linalg
 #from scipy.misc import imread
-from  imageio import imread
+from imageio import imread
 from torch.nn.functional import adaptive_avg_pool2d
 
 try:
