@@ -206,9 +206,7 @@ class CocoAnimals(VisionDataset):
 
 
 class FFHQ(VisionDataset):
-
     def __init__(self, root, transform, batch_size = 60, test_mode = False, return_all = False, imsize=256):
-
         self.root = root
         self.transform = transform
         self.return_all = return_all
@@ -265,14 +263,12 @@ class FFHQ(VisionDataset):
 
 
 class Celeba(VisionDataset):
-
     def __init__(self, root, transform, batch_size = 60, test_mode = False, return_all = False, imsize=128):
-
         self.root = root
         self.transform = transform
         self.return_all = return_all
-        all_files = os.listdir(self.root)
-        self.length = len(all_files)
+        self.all_files = os.listdir(self.root)
+        self.length = len(self.all_files)
         self.fixed_transform = transforms.Compose(
                 [ transforms.Resize(imsize),
                     transforms.CenterCrop(imsize),
@@ -296,9 +292,9 @@ class Celeba(VisionDataset):
         return torch.stack([self.random_batch(idx, True)[0].cuda() for idx in self.fixed_indices])
 
 
-    def random_batch(self,index, fixed=False):
+    def random_batch(self, index, fixed=False):
+        file = self.all_files[index]
 
-        file = str(index+1).zfill(6) + '.png'
         image_path = os.path.join(self.root, file )
         img = Image.open( image_path).convert('RGB')
         if fixed:

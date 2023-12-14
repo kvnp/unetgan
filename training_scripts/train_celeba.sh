@@ -19,4 +19,5 @@ python train.py \
 --unconditional --warmup_epochs 20 \
 --unet_mixup --consistency_loss_and_augmentation \
 --base_root /home/kevin/Projects/unetgan/results \
---data_folder /home/kevin/Projects/CelebA/Img/img_align_celeba_png
+--data_folder /home/kevin/Projects/snesmaps
+#--data_folder /home/kevin/Projects/CelebA/Img/img_align_celeba_png
